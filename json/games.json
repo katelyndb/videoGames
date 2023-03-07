@@ -1,0 +1,18 @@
+[
+    {"title":"Astroneer","size":"4 GB","multiplayer":"true", "controllerSupport":"true","developer":"System Era Softworks", "publisher":"System Era Softworks", "releaseDate":"Dec 16, 2016"},
+    
+    {"title":"Celeste","size":"1 GB","multiplayer":"false","controllerSupport":"true","developer":"Extremely OK Games Ltd.", "publisher":"Matt Makes Games Inc.", "releaseDate":"Jan 25, 2018"},
+    
+    {"title":"Hades","size":"15 GB","multiplayer":"false","controllerSupport":"true","developer":"Supergiant Games", "publisher":"Supergiant Games", "releaseDate":"Sep 17, 2020"},
+    
+    {"title":"Hollow Knight","size":"9 GB","multiplayer":"false","controllerSupport":"true","developer":"Team Cherry", "publisher":"Team Cherry", "releaseDate":"Feb 24, 2017"},
+    
+    {"title":"Hyper Light Drifter","size":"1 GB","multiplayer":"true","controllerSupport":"true","developer":"Heart Machine", "publisher":"Heart Machine", "releaseDate":"Mar 31, 2016"},
+    
+    {"title":"Stardew Valley","size":"500 MB","multiplayer":"true","controllerSupport":"true","developer":"Concerned Ape", "publisher":"Concerned Ape", "releaseDate":"Feb 26, 2016"},
+    
+    {"title":"A Short Hike","size":"400 MB","multiplayer":"false","controllerSupport":"true","developer":"adamgryu", "publisher":"adamgryu", "releaseDate":"Jul 30, 2019"},
+    
+    {"title":"Inscryption","size":"3 GB","multiplayer":"false","controllerSupport":"false","developer":"Daniel Mullins Games", "publisher":"Devolver Digital", "releaseDate":"Oct 19, 2021"}
+    
+    ]
