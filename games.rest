@@ -1,0 +1,7 @@
+// Localhost
+###
+# Get all individuals information
+GET http://localhost:3000/individuals
+###
+# Get all video games information
+GET http://localhost:3000/games
