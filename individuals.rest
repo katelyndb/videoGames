@@ -9,7 +9,13 @@ GET http://localhost:3000/individuals/6406cc81963388d643478996
 POST http://localhost:3000/individuals
 Content-type: application/json
 
-{
-    "firstName":"Hoyt","lastName":"Goodwill","username":"SenorMustach", "level":"1", "gameNumber":"6", "friends":"11"
-}
+{"firstName":"Hoyt","lastName":"Goodwill","username":"SenorMustach", "level":"1", "gameNumber":"6", "friends":"11"}
+### Updates individual information (SenorMustach)
+PUT http://localhost:3000/individuals/6408c16b06423e53809856f9
+Content-type: application/json
+
+{"firstName":"Cy","lastName":"Goodwill","username":"CyGuy", "level":"1", "gameNumber":"6", "friends":"99"}
+
+### Deletes individual (SenorMustach)
+DELETE http://localhost:3000/individuals/6408c16b06423e53809856f9 
 

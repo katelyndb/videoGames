@@ -8,5 +8,9 @@ router.get('/', individualsController.getAllIndividuals);
 router.get('/:id', individualsController.getSingleIndividual);
 // Creates a new individual
 router.post('/', individualsController.createIndividual);
+// Updates an individual by ID
+router.put('/:id', individualsController.updateIndividualById);
+// Deletes an individual by ID
+router.delete('/:id', individualsController.deleteIndividualById);
 
 module.exports = router;
