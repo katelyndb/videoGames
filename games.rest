@@ -1,0 +1,21 @@
+// Localhost
+###
+# Get all video games information
+GET http://localhost:3000/games
+###
+# Gets specific Game information (Astroneer)
+GET http://localhost:3000/games/6406c9c7963388d64343b1a5
+### Creates new game (Slay the Spire)
+POST http://localhost:3000/games
+Content-type: application/json
+
+{"title":"Slay the Spire","size":"1 GB","multiplayer":"false","controllerSupport":"true","developer":"Mega Crit Games", "publisher":"Mega Crit Games", "releaseDate":"Jan 23, 2019"}
+### Updates game information (Slay the Spire)
+PUT http://localhost:3000/contacts/6408bfa82f18c96f7d29f8bb
+Content-type: application/json
+
+{"title":"Slay the Spire for the Nintendo Switch","size":"540 MB","multiplayer":"false","controllerSupport":"true","developer":"Mega Crit Games", "publisher":"Mega Crit Games", "releaseDate":"Jan 23, 2019"}
+
+### Deletes game (Slay the Spire)
+DELETE http://localhost:3000/games/6408bf3c26fd8e2f088d8f80 
+
