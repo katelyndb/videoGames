@@ -6,5 +6,7 @@ const gamesController = require('../controllers/games');
 router.get('/', gamesController.getAllGames);
 // Gets a specific games
 router.get('/:id', gamesController.getSingleGame);
+// Creates a new game
+router.post('/', gamesController.createGame);
 
 module.exports = router;

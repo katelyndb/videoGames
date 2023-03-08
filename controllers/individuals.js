@@ -17,7 +17,23 @@ const getSingleIndividual = async (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists[0]);
   });
-
 };
-  
-module.exports = { getAllIndividuals, getSingleIndividual}
+
+const createIndividual = async (req, res) => {
+  const individualData = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    username: req.body.username,
+    level: req.body.level,
+    gameNumber: req.body.gameNumber,
+    friends: req.body.friends
+  };
+  const result = await mongodb.getDb('videoGames').db('videoGames').collection('individuals').insertOne(individualData);
+  console.log(`New individual created with the following Id: ${result.insertedId}`);
+  if (result.acknowledged) {
+    res.status(201).json(result);
+  } else {
+    res.status(500).json(result.error || 'An error occurred while creating the game.');
+  }
+};
+module.exports = { getAllIndividuals, getSingleIndividual, createIndividual}
