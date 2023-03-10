@@ -1,11 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// Error Handling and Validation
-const createError = require('http-errors');
-const path = require('path');
-const cors = require('cors');
-const { signupValidation, loginValidation } = require('../validation.js');
-//
+
 
 const individualsController = require('../controllers/individuals');
 // Gets all the individuals
