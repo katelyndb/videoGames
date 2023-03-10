@@ -11,11 +11,11 @@ Content-type: application/json
 
 {"title":"Slay the Spire","size":"1 GB","multiplayer":"false","controllerSupport":"true","developer":"Mega Crit Games", "publisher":"Mega Crit Games", "releaseDate":"Jan 23, 2019"}
 ### Updates game information (Slay the Spire)
-PUT http://localhost:3000/games/6408c037f504c5300377b795
+PUT http://localhost:3000/games/640b97123196434e72643fdd
 Content-type: application/json
 
 {"title":"Slay the Spire for the Nintendo Switch","size":"540 MB","multiplayer":"false","controllerSupport":"true","developer":"Mega Crit Games", "publisher":"Mega Crit Games", "releaseDate":"Jan 23, 2019"}
 
 ### Deletes game (Slay the Spire)
-DELETE http://localhost:3000/games/6408c037f504c5300377b795 
+DELETE http://localhost:3000/games/640b97123196434e72643fdd 
 
