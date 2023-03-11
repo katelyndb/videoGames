@@ -61,12 +61,13 @@ try {
   };
   const userId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db('videoGames').collection('individuals').updateOne({ _id: userId },{ $set: individualData });
+
   console.log(`${result.matchedCount} document(s) matched the query criteria`);
   console.log(`${result.modifiedCount} was/were updated`);
   if (result.modifiedCount > 0) {
     res.status(204).send();
   } else {
-    res.status(500).json(result.error || 'Some error occurred while updating the contact.');
+    res.status(500).json(result.error || 'An error occurred while updating the contact.');
   }
 }catch (err) {
   res.status(500).json('Error occured while trying to update the individual. ' + err);

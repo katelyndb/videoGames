@@ -68,7 +68,7 @@ try {
   if (result.modifiedCount > 0) {
     res.status(204).send();
   } else {
-    res.status(500).json(result.error || 'Some error occurred while updating the contact.');
+    res.status(500).json(result.error || 'An error occurred while updating the game.');
   }
 } catch (err) {
   res.status(500).json('Error occured while trying to update the game. ' + err);
@@ -85,7 +85,7 @@ try {
   if (result.deletedCount > 0) {
     res.status(204).send();
   } else {
-    res.status(500).json(result.error || 'Error occured while trying to delete the contact.');
+    res.status(500).json(result.error || 'Error occured while trying to delete the game.');
   }
 } catch (err) {
   res.status(500).json('Error occured while trying to delete the game. ' + err);

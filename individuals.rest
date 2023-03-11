@@ -11,11 +11,11 @@ Content-type: application/json
 
 {"firstName":"Hoyt","lastName":"Goodwill","username":"SenorMustach", "level":"1", "gameNumber":"6", "friends":"11"}
 ### Updates individual information (SenorMustach)
-PUT http://localhost:3000/individuals/640b96de3196434e72643fdc
+PUT http://localhost:3000/individuals/640cccd5d9d7b76ecd02e11c
 Content-type: application/json
 
 {"firstName":"Cy","lastName":"Goodwill","username":"CyGuy", "level":"1", "gameNumber":"6", "friends":"99"}
 
 ### Deletes individual (SenorMustach)
-DELETE http://localhost:3000/individuals/640b96de3196434e72643fdc 
+DELETE http://localhost:3000/individuals/640cce05d9d7b76ecd02e11d 
 
