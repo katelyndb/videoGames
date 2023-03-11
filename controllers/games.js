@@ -3,23 +3,32 @@ const ObjectId = require('mongodb').ObjectId;
 
 
 const getAllGames = async (req, res) => {
-    const result = await mongodb.getDb().db('videoGames').collection('games').find();
+try {
+  const result = await mongodb.getDb().db('videoGames').collection('games').find();
     result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists);
     });
-  };
+  } catch (err) {
+    res.status(500).json('Error occured while trying to get all game information. ' + err);
+  }
+};
 
 const getSingleGame = async (req, res) => {
+try {
   const itemId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db('videoGames').collection('games').find({ _id: itemId });
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists[0]);
   });
+} catch (err) {
+  res.status(500).json('Error occured while trying to get the game information. ' + err);
+}
 };
 
 const createGame = async (req, res) => {
+try {
   const gameData = {
     title: req.body.title,
     size: req.body.size,
@@ -36,9 +45,13 @@ const createGame = async (req, res) => {
   } else {
     res.status(500).json(result.error || 'An error occurred while creating the game.');
   }
+} catch (err) {
+  res.status(500).json('Error occured while trying to create the game. ' + err);
+}
 };
 
 const updateGameById = async(req, res) => {
+try {
   const gameData = {
     title: req.body.title,
     size: req.body.size,
@@ -57,10 +70,14 @@ const updateGameById = async(req, res) => {
   } else {
     res.status(500).json(result.error || 'Some error occurred while updating the contact.');
   }
+} catch (err) {
+  res.status(500).json('Error occured while trying to update the game. ' + err);
+}
 }
 
 
 const deleteGameById = async(req, res) => {
+try {
   const itemId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db('videoGames').collection('games').deleteOne({ _id: itemId }, true);
   console.log(`${result.matchedCount} document(s) matched the query criteria`);
@@ -70,7 +87,8 @@ const deleteGameById = async(req, res) => {
   } else {
     res.status(500).json(result.error || 'Error occured while trying to delete the contact.');
   }
-  
- 
+} catch (err) {
+  res.status(500).json('Error occured while trying to delete the game. ' + err);
+}
 }
 module.exports = { getAllGames, getSingleGame, createGame, updateGameById, deleteGameById}
