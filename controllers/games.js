@@ -1,5 +1,11 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
+// Validator Stuff
+const express = require("express");
+const { Validator } = require("express-json-validator-middleware");
+const { validate } = new Validator();
+const { gameSchema } = require('../validate.js');
+//
 
 
 const getAllGames = async (req, res) => {
@@ -28,7 +34,9 @@ try {
 };
 
 const createGame = async (req, res) => {
+
 try {
+  validate({ body: gameSchema });
   const gameData = {
     title: req.body.title,
     size: req.body.size,
