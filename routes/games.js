@@ -13,7 +13,7 @@ router.post('/', gamesController.createGame);
 router.put('/:id', gamesController.updateGameById);
 // Deletes a game by ID
 router.delete('/:id', gamesController.deleteGameById);
-app.use(validationErrorMiddleware);
+
 
 module.exports = router;
 
