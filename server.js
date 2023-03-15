@@ -6,8 +6,12 @@ const bodyParser = require("body-parser");
 const mongodb = require("./db/connect");
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
+const session = require("express-session");
+const passport = require('passport');
 
 
+// PASSPORT CONFIG
+require('./config/passport')(passport);
 
 app
   .use(bodyParser.json())
@@ -19,8 +23,19 @@ app
     next();
   })
   .use("/", require("./routes"));
-
+// API DOCUMENTATION
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+// SESSION MIDDLEWARE
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false,
+}))
+
+// PASSPORT MIDDLEWARE
+app.use(passport.initailize())
+app.use(passport.session())
+
 
   
 mongodb.initDb((err, mongodb) => {
