@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
 // FOR MONGOOSE USE
-const mongodb = require("./db/mongoose");
+//const mongodb = require("./db/mongoose");
 //
 const mongodb = require("./db/connect");
 const swaggerUi = require('swagger-ui-express');
