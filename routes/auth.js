@@ -7,12 +7,15 @@ const router = express.Router()
 router.get('/google', passport.authenticate('google', { scope: ['profile'] }));
 // Google Auth Callback
 // GET /auth/google/callback
-router.get('google/callback', passport.authenticate('google', { failureRedirect: '/login' }),
+router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
     // Successful authentication, redirect home.
-    res.redirect('/');
+    res.redirect('/dashboard');
   });
-
+// Displays Dashboard Once Signed in
+router.get('/dashboard', (req, res) => {
+  res.send('WOOOOOOOO GET request to the dashboard')
+})
 
 
 

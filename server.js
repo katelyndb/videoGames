@@ -3,12 +3,15 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 const bodyParser = require("body-parser");
+// FOR MONGOOSE USE
+const mongodb = require("./db/mongoose");
+//
 const mongodb = require("./db/connect");
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 const session = require("express-session");
 const passport = require('passport');
-
+require('dotenv').config();
 
 // PASSPORT CONFIG
 require('./config/passport')(passport);
@@ -23,7 +26,7 @@ app
     next();
   })
   .use("/", require("./routes"));
-// API DOCUMENTATION
+// API DOCUMENTATION (SWAGGER)
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 // SESSION MIDDLEWARE
 app.use(session({
@@ -33,10 +36,10 @@ app.use(session({
 }))
 
 // PASSPORT MIDDLEWARE
-app.use(passport.initailize())
+app.use(passport.initialize())
 app.use(passport.session())
 
-
+// FOR MONGOOSE USE
   
 mongodb.initDb((err, mongodb) => {
   if (err) {

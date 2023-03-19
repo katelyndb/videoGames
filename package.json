@@ -26,10 +26,11 @@
     "express-session": "^1.17.3",
     "express-validator": "^6.15.0",
     "mongodb": "^5.1.0",
-    "mongoose": "^7.0.1",
+    "mongoose": "^7.0.2",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
     "swagger-autogen": "^2.23.1",
-    "swagger-ui-express": "^4.6.2"
+    "swagger-ui-express": "^4.6.2",
+    "validator": "^13.9.0"
   }
 }
